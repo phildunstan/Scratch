@@ -1,0 +1,30 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{43E7A7B7-466A-A9B4-E150-ED81CF91491D}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Scratch",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+        {
+			"Name": "StateTree",
+			"Enabled": true
+		},
+      	{
+			"Name": "GameplayStateTree",
+			"Enabled": true
+		}
+	]
+}
