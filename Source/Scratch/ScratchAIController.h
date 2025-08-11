@@ -12,8 +12,11 @@ class SCRATCH_API AScratchAIController : public AAIController
     GENERATED_BODY()
 
 protected:
-    virtual void BeginPlay() override;
+    virtual void OnPossess(APawn *InPawn) override;
 
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UStateTree> StateTree;
+	
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UStateTree> OverrideStateTree;
 };

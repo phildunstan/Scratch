@@ -5,12 +5,14 @@
 #include "Components/StateTreeComponent.h"
 #include "StructUtils/PropertyBag.h"
 
-void AScratchAIController::BeginPlay()
+void AScratchAIController::OnPossess(APawn *InPawn)
 {
-	Super::BeginPlay();
+	Super::OnPossess(InPawn);
   
 	if (UStateTreeComponent* StateTreeComponent = FindComponentByClass<UStateTreeComponent>())
 	{
+		StateTreeComponent->SetStateTree(StateTree);
+		
 		FStateTreeReference StateTreeReference;
 		check(OverrideStateTree);
 		StateTreeReference.SetStateTree(OverrideStateTree);
