@@ -8,13 +8,13 @@ This project is not supported. It has been created with Unreal 5.6, but may requ
 
 This test demonstrates how to pass parameters to a state tree linked asset override.
 
-In the Empty map there is placed a BP_ScratchCharacter. This character is setup to use the BP_ScratchAIController (parented from AScratchAIController).
+In the ScratchLinkedStateTree map there is placed a BP_ScratchLinkedStateTreeAICharacter, that uses the AIC_ScratchLinkedStateTree controller (parented from AScratchAIController). 
 
 The controller contains a state tree AI component linked to the ST_HasLinkedAsset state tree.
 
-ST_HasLinkedAsset contains the state tree linked asset that will be overridden.  Currently, the linked state tree node is bound to the ST_DefaultLinkedAsset state tree and specifies the Scratch.LinkedStateTree gameplay tag.
+ST_HasLinkedAsset contains the state tree linked asset that will be overridden. Currently, the linked state tree node is bound to the ST_DefaultLinkedAsset state tree and specifies the Scratch.LinkedStateTree gameplay tag.
 
-Within the AScratchAIController constructor an override is set to replace the linked state tree for that gameplay tag with the ST_OverrideLinkedAsset state tree. At the same time a "Text" parameter is set.
+Within the AScratchAIController OnPossess an override is set to replace the linked state tree for that gameplay tag with the ST_OverrideLinkedAsset state tree. At the same time a "Text" parameter is set.
 
 The code to set the state tree override:
 ```cpp

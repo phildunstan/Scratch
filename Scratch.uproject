@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{43E7A7B7-466A-A9B4-E150-ED81CF91491D}",
+	"EngineAssociation": "{088D685D-4A67-D969-8676-EBA32B9BA74E}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -18,13 +18,17 @@
 				"Editor"
 			]
 		},
-        {
+		{
 			"Name": "StateTree",
 			"Enabled": true
 		},
-      	{
+		{
 			"Name": "GameplayStateTree",
 			"Enabled": true
 		}
+	],
+	"AdditionalPluginDirectories": [
+		"../../../UnrealEnginePlugins",
+		"../Plugins"
 	]
 }

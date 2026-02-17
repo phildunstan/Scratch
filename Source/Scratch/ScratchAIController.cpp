@@ -11,17 +11,19 @@ void AScratchAIController::OnPossess(APawn *InPawn)
   
 	if (UStateTreeComponent* StateTreeComponent = FindComponentByClass<UStateTreeComponent>())
 	{
-		StateTreeComponent->SetStateTree(StateTree);
+		if (OverrideStateTree)
+		{
+			StateTreeComponent->SetStateTree(StateTree);
+			
+			FStateTreeReference StateTreeReference;
+			StateTreeReference.SetStateTree(OverrideStateTree);
 		
-		FStateTreeReference StateTreeReference;
-		check(OverrideStateTree);
-		StateTreeReference.SetStateTree(OverrideStateTree);
+			FInstancedPropertyBag& Parameters = StateTreeReference.GetMutableParameters();
+			const FName TextPropertyName("Text");
+			Parameters.SetValueString(TextPropertyName, TEXT("Override"));
+			StateTreeReference.SetPropertyOverridden(Parameters.FindPropertyDescByName(TextPropertyName)->ID, true);
 		
-		FInstancedPropertyBag& Parameters = StateTreeReference.GetMutableParameters();
-		const FName TextPropertyName("Text");
-		Parameters.SetValueString(TextPropertyName, TEXT("Override"));
-		StateTreeReference.SetPropertyOverridden(Parameters.FindPropertyDescByName(TextPropertyName)->ID, true);
-		
-		StateTreeComponent->AddLinkedStateTreeOverrides(ScratchGameplayTags::SCRATCH_LINKEDSTATETREE, StateTreeReference);
+			StateTreeComponent->AddLinkedStateTreeOverrides(ScratchGameplayTags::SCRATCH_LINKEDSTATETREE, StateTreeReference);
+		}
 	}
 }
