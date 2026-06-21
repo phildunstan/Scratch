@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{088D685D-4A67-D969-8676-EBA32B9BA74E}",
+	"EngineAssociation": "{16680884-4FBD-D963-BFAA-0991940614FA}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -24,6 +24,38 @@
 		},
 		{
 			"Name": "GameplayStateTree",
+			"Enabled": true
+		},
+		{
+			"Name": "AIAssistant",
+			"Enabled": true
+		},
+		{
+			"Name": "AllToolsets",
+			"Enabled": true
+		},
+		{
+			"Name": "ChaosCloth",
+			"Enabled": false
+		},
+		{
+			"Name": "UserToolBoxCore",
+			"Enabled": true
+		},
+		{
+			"Name": "UserToolBoxBasicCommand",
+			"Enabled": true
+		},
+		{
+			"Name": "ModelContextProtocol",
+			"Enabled": true
+		},
+		{
+			"Name": "SlateIM",
+			"Enabled": true
+		},
+		{
+			"Name": "SandboxedEditing",
 			"Enabled": true
 		}
 	],
